@@ -1,4 +1,7 @@
-﻿namespace Menu
+﻿using Menu.Model;
+using System.Security.Cryptography;
+
+namespace Menu
 {
     internal class Program
     {
@@ -7,10 +10,17 @@
         static void Main(string[] args)
         {
             int opcao;
+            Conta c1 = new Conta(1, 345, 1, "Luciano",10000.00M);
+            c1.Visualizar();
+            c1.Sacar(12000.0M);
+            c1.Visualizar();
+            c1.Depositar(5000.0M);
+
+
+
+
 
             while (true)
-
-
             {
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.Yellow;
