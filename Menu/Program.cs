@@ -6,10 +6,10 @@
         {
             int opção;
             
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             //while(true) 
-            Console.WriteLine("------------------------------------------------------------     ");
+            Console.WriteLine("------------------------------------------------------------      ");
             Console.WriteLine(" *****                                                            ");
             Console.WriteLine("        Seja Bem Vindo - Brazilem  Express                        ");
             Console.WriteLine("                                                                  ");
@@ -26,8 +26,10 @@
             Console.WriteLine("                      8 - Transferir valores entre Contas         ");
             Console.WriteLine("                      9 - Sair                                    ");
             Console.WriteLine("                                                                  ");
-            Console.WriteLine("----------------------------------------------------------------  ");
+            Console.WriteLine("-------------------------------------------------------------     ");
             Console.ResetColor();
+
+            
 
 
 
