@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Menu.Model
 {
-    internal class Conta
-    {
-        
-        
+    public class Conta
+    {   
         private int numero;
         private int agencia;
         private int tipo;
@@ -74,7 +72,7 @@ namespace Menu.Model
             this.saldo = saldo;
         }
 
-        public bool Sacar(decimal valor)
+        public virtual bool Sacar(decimal valor)
         {
 
             if (this.GetSaldo() < valor)
@@ -92,7 +90,7 @@ namespace Menu.Model
             this.SetSaldo(this.saldo + valor);
         }
         // como visualizar tudo de um vez
-        public void Visualizar()
+        public virtual void Visualizar()
         {
 
             string tipo = string.Empty;
@@ -115,7 +113,6 @@ namespace Menu.Model
             Console.WriteLine($"Tipo da Conta:  {tipo}");
             Console.WriteLine($"Titular: " + this.titular);
             Console.WriteLine($"Saldo: " + this.saldo);
-
-    
-    }   }
+        }   
+    }
 }

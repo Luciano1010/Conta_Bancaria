@@ -3,7 +3,7 @@ using System.Security.Cryptography;
 
 namespace Menu
 {
-    internal class Program
+    public class Program
     {
 
         private static ConsoleKeyInfo consoleKeyInfo;
@@ -15,6 +15,9 @@ namespace Menu
             c1.Sacar(12000.0M);
             c1.Visualizar();
             c1.Depositar(5000.0M);
+
+            Contacorrente c2 = new Contacorrente(12, 123, 01, "Luciano Simões", 12, 10000.00M);
+            c2.Visualizar();
 
 
 
