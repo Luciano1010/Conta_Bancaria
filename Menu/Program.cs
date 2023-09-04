@@ -10,11 +10,7 @@ namespace Menu
         static void Main(string[] args)
         {
             int opcao;
-            Conta c1 = new Conta(1, 345, 1, "Luciano",10000.00M);
-            c1.Visualizar();
-            c1.Sacar(12000.0M);
-            c1.Visualizar();
-            c1.Depositar(5000.0M);
+            
 
             Contacorrente c2 = new Contacorrente(12, 123, 01, "Luciano Simões", 12, 10000.00M);
             c2.Visualizar();
