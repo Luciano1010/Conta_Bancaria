@@ -1,4 +1,5 @@
-﻿using Menu.Model;
+﻿using Menu.Controller;
+using Menu.Model;
 using System.Security.Cryptography;
 
 namespace Menu
@@ -9,11 +10,15 @@ namespace Menu
         private static ConsoleKeyInfo consoleKeyInfo;
         static void Main(string[] args)
         {
-            int opcao;
-            
+            int opcao, agencia, tipo, aniversario;
+            string? titular;
+            decimal saldo, limite;
 
-            Contacorrente c2 = new Contacorrente(12, 123, 01, "Luciano Simões", 12, 10000.00M);
-            c2.Visualizar();
+
+            ContaController contas = new();
+
+            Contacorrente c2 = new Contacorrente(contas.GerarNumero(), 123, 01, "Luciano Simões", 12, 10000.00M);
+            contas.Cadastrar(c2);
 
 
 
@@ -65,12 +70,54 @@ namespace Menu
                         Console.WriteLine("Criar Conta\n\n");
                         Console.ResetColor();
 
+                        Console.Write("Digite o Numero da Agencia: ");
+                        agencia = Convert.ToInt32(Console.ReadLine());
+                        
+                        Console.Write("Digite o Nome do titular: ");
+                        titular = Console.ReadLine();
+                        // o que significa ?? é um operador de coalecencia, ele retonar como string vazia o que é diferente de nulo
+                        titular ??= string.Empty;
+                        do {
+                            Console.Write("Digite o Tipo da conta: ");
+                            tipo = Convert.ToInt32(Console.ReadLine()); 
+                            }while(tipo != 1 && tipo != 2);
+
+
+
+                        Console.Write("Digite o Saldo da conta: ");
+                        saldo = Convert.ToDecimal(Console.ReadLine());
+
+                        switch (tipo) 
+                        {
+                            case 1:
+                                Console.Write("Digite o Limite da conta: ");
+                                limite = Convert.ToDecimal(Console.ReadLine());
+
+                                contas.Cadastrar(new Contacorrente(contas.GerarNumero(), agencia, tipo, titular, saldo, limite));
+                                break;
+
+
+                            case 2:
+                                Console.WriteLine("Digite o dia do aniversairio da contas: ");
+                                aniversario = Convert.ToInt32(Console.ReadLine());
+
+                                contas.Cadastrar(new Poupanca(contas.GerarNumero(), agencia, tipo, titular, saldo, aniversario));
+                                break;
+
+                        
+                        }
+                       
+
+
+                        
+
                         KeyPress();
                         break;
                     case 2:
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Listar todas as Contas\n\n");
                         Console.ResetColor();
+                        contas.ListarTodas();
 
                         KeyPress();
                         break;
