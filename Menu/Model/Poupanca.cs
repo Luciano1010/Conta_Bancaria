@@ -11,6 +11,10 @@ namespace Menu.Model
     {
         private int Aniversario;
 
+        public Poupanca(int numero, int agencia, int tipo, string titular, decimal saldo) : base(numero, agencia, tipo, titular, saldo)
+        {
+        }
+
         public Poupanca(int numero, int agencia, int tipo, string titular, decimal saldo, int Aniversario) : base(numero, agencia, tipo, titular, saldo)
         {
             this.Aniversario = Aniversario;

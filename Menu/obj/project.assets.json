@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Área de Trabalho\\Conta_Bancaria\\Menu\\Menu.csproj",
-      "projectName": "Menu",
-      "projectPath": "C:\\Users\\User\\Desktop\\Área de Trabalho\\Conta_Bancaria\\Menu\\Menu.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Área de Trabalho\\Conta_Bancaria\\Menu\\Conta_Bancaria.csproj",
+      "projectName": "Conta_Bancaria",
+      "projectPath": "C:\\Users\\User\\Desktop\\Área de Trabalho\\Conta_Bancaria\\Menu\\Conta_Bancaria.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\User\\Desktop\\Área de Trabalho\\Conta_Bancaria\\Menu\\obj\\",
       "projectStyle": "PackageReference",

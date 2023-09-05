@@ -10,16 +10,18 @@ namespace Menu
         private static ConsoleKeyInfo consoleKeyInfo;
         static void Main(string[] args)
         {
-            int opcao, agencia, tipo, aniversario;
+            int opcao, agencia, tipo, aniversario, numero;
             string? titular;
             decimal saldo, limite;
 
 
             ContaController contas = new();
 
-            Contacorrente c2 = new Contacorrente(contas.GerarNumero(), 123, 01, "Luciano Simões", 12, 10000.00M);
-            contas.Cadastrar(c2);
+            Contacorrente c1 = new Contacorrente(contas.GerarNumero(), 123, 01, "Luciano Simões", 12, 10000.00M);
+            contas.Cadastrar(c1);
 
+            Poupanca c2 = new(contas.GerarNumero(), 123, 01, "Luciano Simões", 12);
+            contas.Cadastrar(c2);
 
 
 
@@ -49,8 +51,17 @@ namespace Menu
                 Console.WriteLine("                                                     ");
                 Console.ResetColor();
 
-                opcao = Convert.ToInt32(Console.ReadLine());
-
+                // tratamento de exceção, impedindo a digitação de strings.
+                try
+                {
+                    opcao = Convert.ToInt32(Console.ReadLine());
+                }catch(FormatException) 
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("Digite um numero inteiro de 1 a 9");
+                    opcao = 0; // zerar a variavel a varivael "opção" porque quando digita uma letra ela fica reservada
+                    Console.ResetColor();
+                }
 
 
                 if (opcao == 9)
@@ -125,6 +136,12 @@ namespace Menu
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Consultar dados da Conta - por número\n\n");
                         Console.ResetColor();
+                        
+                        Console.WriteLine(" Digite o numero da conta");
+                        numero = Convert.ToInt32(Console.ReadLine());   
+
+                        contas.ProcurarPorNumero(numero);
+                       
 
                         KeyPress();
                         break;
@@ -139,6 +156,12 @@ namespace Menu
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Apagar a Conta\n\n");
                         Console.ResetColor();
+
+                        Console.WriteLine(" Digite o numero da conta");
+                        numero = Convert.ToInt32(Console.ReadLine());
+
+                        contas.Deletar(numero);
+
 
                         KeyPress();
                         break;
@@ -177,7 +200,7 @@ namespace Menu
         static void Sobre()
         {
             Console.WriteLine("\n*********************************************************");
-            Console.WriteLine("Projeto Desenvolvido por: ");
+            Console.WriteLine("Projeto Desenvolvido por: Luciano Simões de Almeida");
             Console.WriteLine("Generation Brasil - generation@generation.org");
             Console.WriteLine("github.com/conteudoGeneration");
             Console.WriteLine("*********************************************************");

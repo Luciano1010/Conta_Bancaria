@@ -31,7 +31,20 @@ namespace Menu.Controller
 
         public void Deletar(int numero)
         {
-            throw new NotImplementedException();
+            var conta = BuscarNaCollection(numero);
+
+            if (conta is not null)
+            {
+                if (listaContas.Remove(conta) == true)
+                    Console.WriteLine($"A Conta {numero} foi apagada com Sucesso:");
+            }
+            else
+            {
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"A conta numero {numero} não foi encontrado:");
+                Console.ResetColor();
+            }
         }
 
       
@@ -46,7 +59,17 @@ namespace Menu.Controller
 
         public void ProcurarPorNumero(int numero)
         {
-            throw new NotImplementedException();
+            var conta = BuscarNaCollection(numero);
+
+            if (conta is not null)
+                conta.Visualizar();
+            else 
+            {
+            
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"A conta numero {numero} não foi encontrado:");
+                Console.ResetColor();
+            }
         }
 
         // metodos bancarios
@@ -71,6 +94,16 @@ namespace Menu.Controller
             return ++ numero;
         }
 
-
+        // metedo de busca especifica
+        public Conta? BuscarNaCollection(int numero) 
+        {
+            foreach (var conta in listaContas) 
+            {
+                if (conta.GetNumero() == numero) 
+                    return conta;
+            
+            }
+            return null;// minha assinatura nao esta com o ?, onde o objeto pode vim nulo, entao é so colocar o ? na frente da assinatura
+        }   
     }
 }
