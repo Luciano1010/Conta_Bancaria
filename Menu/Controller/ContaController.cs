@@ -18,15 +18,16 @@ namespace Menu.Controller
 
 
         // metodos CRUD
+
         public void Atualizar(Conta conta)
         {
-
+            // busca o que ja esta na collection a conta que ja esta na collection
             var buscaConta = BuscarNaCollection(conta.GetNumero());  
 
             if(buscaConta is not null) 
-            {
+            {  // com o index eu pego a aonde a conta esta
                 var index = listaContas.IndexOf(buscaConta);
-
+                // parte que sera feita atualização da conta
                 listaContas[index] = conta;
 
                 Console.WriteLine($"A Conta numero {conta.GetNumero()}");
@@ -94,15 +95,57 @@ namespace Menu.Controller
         // metodos bancarios
         public void Sacar(int numero, decimal valor)
         {
-            throw new NotImplementedException();
+            var conta = BuscarNaCollection(numero);
+            
+            if(conta is not null) 
+            {
+                if (conta.Sacar(valor) == true)
+                    Console.WriteLine($"O Saque na conta numero {numero} foi efetuado com sucesso: ");
+            }
+            else 
+            {
+                Console.ForegroundColor= ConsoleColor.Red;  
+                Console.WriteLine($"A conta numero{numero} não foi encontrada: ");
+                Console.ResetColor();
+            
+            }
         }
         public void Depositar(int numero, decimal valor)
         {
-            throw new NotImplementedException();
+            var conta = BuscarNaCollection(numero);
+            if (conta is not null)
+            {
+                     conta.Depositar(valor);
+                    Console.WriteLine($"O Saque na conta numero {numero} foi efetuado com sucesso: ");
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"A conta numero{numero} não foi encontrada: ");
+                Console.ResetColor();
+
+            }
         }
         public void Transferir(int numeroOrigem, int numeroDestino, decimal valor)
         {
-            throw new NotImplementedException();
+            var contaOrigem = BuscarNaCollection(numeroOrigem);
+            var contaDestino = BuscarNaCollection(numeroDestino);
+
+            if (contaOrigem is not null && contaDestino is not null)
+            {
+                if (contaOrigem.Sacar(valor) == true)
+                {
+                    contaDestino.Depositar(valor);
+                    Console.WriteLine("Tranferencia enviada com sucesso: ");
+                }
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Conta nao encontrada ");
+                Console.ResetColor();
+
+            }
         }
 
         // metodos auxiliares
@@ -113,7 +156,7 @@ namespace Menu.Controller
             return ++ numero;
         }
 
-        // metedo de busca especifica
+        // met0do de busca especifica dentro da classe conta
         public Conta? BuscarNaCollection(int numero) 
         {
             foreach (var conta in listaContas) 

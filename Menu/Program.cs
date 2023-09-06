@@ -1,5 +1,6 @@
 ﻿using Menu.Controller;
 using Menu.Model;
+using System.Drawing;
 using System.Security.Cryptography;
 
 namespace Menu
@@ -10,13 +11,13 @@ namespace Menu
         private static ConsoleKeyInfo consoleKeyInfo;
         static void Main(string[] args)
         {
-            int opcao, agencia, tipo, aniversario, numero;
+            int opcao, agencia, tipo, aniversario, numero, numeroDestino;
             string? titular;
-            decimal saldo, limite;
+            decimal saldo, limite, valor;
 
 
             ContaController contas = new();
-
+            // criando um obejto - c1 é um objeto e c1 da um novo objeto dentros parametro contacorrente
             Contacorrente c1 = new Contacorrente(contas.GerarNumero(), 123, 01, "Luciano Simões", 12, 10000.00M);
             contas.Cadastrar(c1);
 
@@ -218,6 +219,16 @@ namespace Menu
                         Console.WriteLine("Saque\n\n");
                         Console.ResetColor();
 
+                        Console.WriteLine(" Digite o numero da conta");
+                        numero = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Digite o Valor  do Saque: ");
+                        valor = Convert.ToDecimal(Console.ReadLine());
+
+                        // chamando metodo sacar
+                        contas.Sacar(numero, valor);
+                       
+
                         KeyPress();
                         break;
                  
@@ -226,6 +237,14 @@ namespace Menu
                         Console.WriteLine("Depósito\n\n");
                         Console.ResetColor();
 
+                        Console.WriteLine(" Digite o numero da conta");
+                        numero = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Digite o Valor  do Deposito: ");
+                        valor = Convert.ToDecimal(Console.ReadLine());
+                        // chamando o metedo depositar
+                        contas.Depositar(numero, valor);
+
                         KeyPress();
                         break;
 
@@ -233,7 +252,17 @@ namespace Menu
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Transferência entre Contas\n\n");
                         Console.ResetColor();
+                        
+                        Console.WriteLine(" Digite o numero da conta de Origem");
+                        numero = Convert.ToInt32(Console.ReadLine());
 
+                        Console.WriteLine("Digite o numero da conta de Destino: ");
+                        numeroDestino = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine("Digite o Valor a ser Transferido: ");
+                        valor= Convert.ToInt32(Console.ReadLine());
+                        // chamando o metedo Transferir
+                        contas.Transferir(numero, numeroDestino, valor);
                         KeyPress();
                         break;
 
@@ -256,8 +285,8 @@ namespace Menu
         {
             Console.WriteLine("\n*********************************************************");
             Console.WriteLine("Projeto Desenvolvido por: Luciano Simões de Almeida");
-            Console.WriteLine("Generation Brasil - generation@generation.org");
-            Console.WriteLine("github.com/conteudoGeneration");
+            Console.WriteLine("Email - luciano_lopesdealmeida@hotmail.com");
+            Console.WriteLine("github.com/Luciano1010");
             Console.WriteLine("*********************************************************");
 
         }
