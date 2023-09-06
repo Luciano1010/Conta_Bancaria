@@ -88,7 +88,8 @@ namespace Menu
                         titular = Console.ReadLine();
                         // o que significa ?? é um operador de coalecencia, ele retonar como string vazia o que é diferente de nulo
                         titular ??= string.Empty;
-                        do {
+                        do 
+                        {
                             Console.Write("Digite o Tipo da conta: ");
                             tipo = Convert.ToInt32(Console.ReadLine()); 
                             }while(tipo != 1 && tipo != 2);
@@ -145,13 +146,59 @@ namespace Menu
 
                         KeyPress();
                         break;
-                    case 4:
+
+                        case 4:
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Atualizar dados da Conta\n\n");
                         Console.ResetColor();
 
+                        Console.WriteLine("Digite o número da Conta: ");
+                        numero = Convert.ToInt32(Console.ReadLine());
+
+                        var conta = contas.BuscarNaCollection(numero);
+
+                        if (conta is not null)
+                        {
+                            Console.WriteLine("Digite o Número da Agência: ");
+                            agencia = Convert.ToInt32(Console.ReadLine());
+
+                            Console.WriteLine("Digite o Nome do Titular: ");
+                            titular = Console.ReadLine();
+
+                            titular ??= string.Empty;
+
+                            Console.WriteLine("Digite o Saldo da Conta: ");
+                            saldo = Convert.ToDecimal(Console.ReadLine());
+
+                            tipo = conta.GetTipo();
+
+                            switch (tipo)
+                            {
+                                case 1:
+                                    Console.WriteLine("Digite o Limite da Conta: ");
+                                    limite = Convert.ToDecimal(Console.ReadLine());
+
+                                    contas.Atualizar(new Contacorrente(numero, agencia, tipo, titular, saldo, limite));
+                                    break;
+                                case 2:
+                                    Console.WriteLine("Digite o dia do Aniversário da Conta: ");
+                                    aniversario = Convert.ToInt32(Console.ReadLine());
+
+                                    contas.Atualizar(new Poupanca(numero, agencia, tipo, titular, saldo, aniversario));
+                                    break;
+                            }
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine($"A conta numero {numero} não foi encontrada!");
+                            Console.ResetColor();
+                        }
+
                         KeyPress();
                         break;
+
+
                     case 5:
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Apagar a Conta\n\n");
@@ -165,6 +212,7 @@ namespace Menu
 
                         KeyPress();
                         break;
+
                     case 6:
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Saque\n\n");
@@ -172,6 +220,7 @@ namespace Menu
 
                         KeyPress();
                         break;
+                 
                     case 7:
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Depósito\n\n");
@@ -179,6 +228,7 @@ namespace Menu
 
                         KeyPress();
                         break;
+
                     case 8:
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Transferência entre Contas\n\n");
@@ -186,6 +236,7 @@ namespace Menu
 
                         KeyPress();
                         break;
+
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("\nOpção Inválida!\n");
@@ -194,8 +245,12 @@ namespace Menu
                         KeyPress();
                         break;
                 }
+
             }
+
+
         }
+
 
         static void Sobre()
         {

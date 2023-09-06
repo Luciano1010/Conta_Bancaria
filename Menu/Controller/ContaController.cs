@@ -20,7 +20,26 @@ namespace Menu.Controller
         // metodos CRUD
         public void Atualizar(Conta conta)
         {
-            throw new NotImplementedException();
+
+            var buscaConta = BuscarNaCollection(conta.GetNumero());  
+
+            if(buscaConta is not null) 
+            {
+                var index = listaContas.IndexOf(buscaConta);
+
+                listaContas[index] = conta;
+
+                Console.WriteLine($"A Conta numero {conta.GetNumero()}");
+
+            }
+            else
+            {
+
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"A conta numero {numero} não foi encontrado");
+                Console.ResetColor();
+            }
+
         }
 
         public void Cadastrar(Conta conta)
@@ -36,13 +55,13 @@ namespace Menu.Controller
             if (conta is not null)
             {
                 if (listaContas.Remove(conta) == true)
-                    Console.WriteLine($"A Conta {numero} foi apagada com Sucesso:");
+                    Console.WriteLine($"A Conta {numero} foi apagada com Sucesso");
             }
             else
             {
 
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"A conta numero {numero} não foi encontrado:");
+                Console.WriteLine($"A conta numero {numero} não foi encontrado");
                 Console.ResetColor();
             }
         }
@@ -105,5 +124,7 @@ namespace Menu.Controller
             }
             return null;// minha assinatura nao esta com o ?, onde o objeto pode vim nulo, entao é so colocar o ? na frente da assinatura
         }   
+    
+        
     }
 }
