@@ -1,0 +1,28 @@
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\obj\Debug\net7.0\Conta_Bancaria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\obj\Debug\net7.0\Conta_Bancaria.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\obj\Debug\net7.0\Conta_Bancaria.AssemblyInfo.cs
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\obj\Debug\net7.0\Conta_Bancaria.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\bin\Debug\net7.0\Conta_Bancaria.exe
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\bin\Debug\net7.0\Conta_Bancaria.deps.json
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\bin\Debug\net7.0\Conta_Bancaria.runtimeconfig.json
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\bin\Debug\net7.0\Conta_Bancaria.dll
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\bin\Debug\net7.0\Conta_Bancaria.pdb
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\obj\Debug\net7.0\Conta_Bancaria.dll
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\obj\Debug\net7.0\refint\Conta_Bancaria.dll
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\obj\Debug\net7.0\Conta_Bancaria.pdb
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\obj\Debug\net7.0\Conta_Bancaria.genruntimeconfig.cache
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\Menu\obj\Debug\net7.0\ref\Conta_Bancaria.dll
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\bin\Debug\net7.0\Conta_Bancaria.exe
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\bin\Debug\net7.0\Conta_Bancaria.deps.json
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\bin\Debug\net7.0\Conta_Bancaria.runtimeconfig.json
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\bin\Debug\net7.0\Conta_Bancaria.dll
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\bin\Debug\net7.0\Conta_Bancaria.pdb
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\obj\Debug\net7.0\Conta_Bancaria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\obj\Debug\net7.0\Conta_Bancaria.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\obj\Debug\net7.0\Conta_Bancaria.AssemblyInfo.cs
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\obj\Debug\net7.0\Conta_Bancaria.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\obj\Debug\net7.0\Conta_Bancaria.dll
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\obj\Debug\net7.0\refint\Conta_Bancaria.dll
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\obj\Debug\net7.0\Conta_Bancaria.pdb
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\obj\Debug\net7.0\Conta_Bancaria.genruntimeconfig.cache
+C:\Users\User\Desktop\Área de Trabalho\Conta_Bancaria\conta bancaria\obj\Debug\net7.0\ref\Conta_Bancaria.dll
